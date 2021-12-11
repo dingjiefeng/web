@@ -1,0 +1,36 @@
+version: '3.9'
+services:
+  app:
+    container_name: "app"
+    image: djf/web-app:dev
+    build:
+      dockerfile: ./Dockerfile
+      context: .
+    ports:
+      - "8080:8080"
+    links:
+      - db
+  db:
+    container_name: "db"
+    image: "mysql:5.6"
+    ports:
+      - "8081:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 12345678
+      MYSQL_DATABASE: app_db
+      MYSQL_USER: work
+      MYSQL_PASSWORD: work12345678
+    volumes:
+      - ./dev/dbData:/var/lib/mysql
+#  phpmyadmin:
+#    container_name: "pma"
+#    ports:
+#      - "8081:80"
+#    image: "phpmyadmin:latest"
+#    links:
+#      - db
+#    restart: always
+#    environment:
+#      PMA_HOST: db
+#      PMA_PORT: 3306
+#      PMA_ARBITRARY: 1
