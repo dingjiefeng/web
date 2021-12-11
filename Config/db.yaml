@@ -1,4 +1,6 @@
 db:
-  host: "db:3306"
-  user: "root"
+  host: "db"
+  port: 3306
+  username: "root"
   password: 12345678
+  database: "app_db"
