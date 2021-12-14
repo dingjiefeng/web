@@ -1,0 +1,22 @@
+db:
+  host: "db"
+  port: 3306
+  username: "root"
+  password: 12345678
+  database: "app_db"
+log:
+  level: "debug",
+  outputdir: "/var/logs",
+  dirMaxSizeG: 5,
+  dirMaxFileCount: 20,
+  fileDateFmt: "2006-01-02 15:04:05",
+  fileSuffix: ".log",
+  filePrefix: "web_app",
+  fileRotationHour: 24,
+  fileRotationCount: 10,
+  fileMaxSizeM: 256,
+  reportCaller: true,
+  levelReportCaller:
+    - "error"
+  formatter: "text",
+  webLogFilePrefox: "web_app"

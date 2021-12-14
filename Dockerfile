@@ -23,7 +23,7 @@ WORKDIR /root/
 
 EXPOSE 8080:$PORT
 
-COPY --from=0 /go/src/web/Config ./Config
+COPY --from=0 /go/src/web/conf ./conf
 COPY --from=0 /go/src/web/app .
 
 CMD ["./app"]

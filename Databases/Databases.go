@@ -2,9 +2,10 @@ package Databases
 
 import (
 	"fmt"
-	mysql "gorm.io/driver/mysql"
-	"gorm.io/gorm"
 	"time"
+
+	"gorm.io/driver/mysql"
+	"gorm.io/gorm"
 
 	"web/Config"
 )

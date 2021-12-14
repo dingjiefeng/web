@@ -19,6 +19,7 @@ type Config struct {
 		Password string `yaml:"password"`
 		Database string `yaml:"database"`
 	}
+	Log LogConfig
 }
 
 func readConfig(filename string) (*Config, error) {
@@ -38,7 +39,7 @@ func readConfig(filename string) (*Config, error) {
 
 func init() {
 	dir, _ := os.Getwd()
-	filename := fmt.Sprintf("%s%s", dir, "/Config/db.yaml")
+	filename := fmt.Sprintf("%s%s", dir, "/conf/app.yaml")
 	var err error = nil
 	config, err = readConfig(filename)
 	if err != nil {
